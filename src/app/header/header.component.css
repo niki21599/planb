@@ -1,0 +1,10 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+.pointer{
+  cursor: pointer;
+}
+a{
+  color: white;
+}

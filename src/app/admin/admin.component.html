@@ -1,0 +1,25 @@
+<app-header></app-header>
+<h2 class="margin-16">Hallo Niklas, hier ist deine Übersicht über die Fortschritte der Azubis</h2>
+<div class="example-container mat-elevation-z8">
+    <mat-table #table [dataSource]="elements">
+        <ng-container matColumnDef="name">
+          <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+        </ng-container>
+    
+        <!-- Name Column -->
+        <ng-container matColumnDef="nextChapter">
+          <mat-header-cell *matHeaderCellDef> Aktuell in Bearbeitung </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.nextChapter}} </mat-cell>
+        </ng-container>
+    
+        <!-- Weight Column -->
+        <ng-container matColumnDef="progress">
+          <mat-header-cell *matHeaderCellDef> Fortschritt </mat-header-cell>
+          <mat-cell *matCellDef="let element"> <mat-progress-bar mode="determinate" [value]="element.progress * 100"></mat-progress-bar>  <div class="margin-left">{{element.progress * 100 | number: '1.0-0'}}%</div> </mat-cell>
+        </ng-container>
+    
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+</div>

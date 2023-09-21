@@ -1,0 +1,17 @@
+.heading{
+    display: flex;
+    margin: 16px;
+    gap: 16px;
+}
+
+.badge{
+    padding: 8px;
+    border-radius: 24px;
+    background-color: gray;
+    color: white;
+    height: fit-content;
+}
+
+.chapterComplete{
+    background-color: green !important;
+}

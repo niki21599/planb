@@ -1,0 +1,26 @@
+<p>
+    <mat-toolbar color="primary">
+    <span class="pointer" routerLink="/">Plan B</span>
+    <span class="example-spacer"></span>
+
+    <button routerLink="/admin" *ngIf="isAuthenticated"  mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>view_list</mat-icon>
+    </button>
+    <button routerLink="/" *ngIf="isAuthenticated"  mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>home</mat-icon>
+    </button>
+    <button routerLink="/settings" *ngIf="isAuthenticated"  mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>settings</mat-icon>
+    </button>
+    <a href="assets/meilensteine.pdf"><button *ngIf="isAuthenticated" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>download</mat-icon>
+    </button></a>
+    <button routerLink="/login" *ngIf="isAuthenticated" mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+     <mat-icon>logout</mat-icon>
+   </button>
+   
+
+  </mat-toolbar>
+  </p>
+
+  

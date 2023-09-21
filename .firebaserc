@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "plan-b-10d57": {
+      "hosting": {
+        "planb": [
+          "plan-b-10d57"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "plan-b-10d57"
+  }
+}

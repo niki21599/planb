@@ -1,0 +1,20 @@
+<app-header></app-header>
+<mat-card>
+    <mat-card-content>
+        <form #settingsForm="ngForm" (ngSubmit)="onSubmit()">
+            <h2>Meine Daten</h2>
+            <mat-form-field>
+                <input matInput placeholder="Vorname" [(ngModel)]="firstname" name="firstname">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Nachname" [(ngModel)]="lastname" name="lastname">
+            </mat-form-field>
+            <mat-select placeholder="Rolle" [(value)]="selected">
+                <mat-option *ngFor="let role of roles" [value]="role.value">
+                  {{ role.viewValue }}
+                </mat-option>
+              </mat-select>
+            <button mat-raised-button color="primary">Speichern</button>
+        </form>
+    </mat-card-content>
+</mat-card>

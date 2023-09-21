@@ -1,0 +1,12 @@
+<app-header></app-header>
+<div>
+    <div *ngFor="let milestone of firebaseService.milestones">
+        <h2>{{ milestone.title }}</h2>
+        <div *ngFor="let subChapter of milestone.subChapters">
+            <mat-card [class.isComplete]="subChapter.isComplete">
+                <mat-card-content>{{ subChapter.subHeading }}</mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+
+</div>

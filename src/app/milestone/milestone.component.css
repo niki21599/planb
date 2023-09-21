@@ -1,0 +1,8 @@
+.isComplete{
+    background-color: green;
+    color: white;
+}
+
+mat-card{
+    margin-bottom: 8px;
+}

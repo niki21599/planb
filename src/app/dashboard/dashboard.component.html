@@ -1,0 +1,63 @@
+<app-header></app-header>
+
+<div class="padding">
+    <h1> Hallo, Niklas. Hier ist deine Übersicht: </h1>
+    <div class="flex">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Gesamtfortschritt</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div class="flex-center">
+                    {{ getPercantageValue() | number: '1.0-0' }}%
+                </div>
+                <mat-progress-bar mode="determinate" [value]="getPercantageValue()"></mat-progress-bar>    
+            </mat-card-content>
+        </mat-card>
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Meilensteine</mat-card-title>
+            </mat-card-header>
+            <mat-card-content> 
+                <div class="flex-center">
+                    {{ getNumberOfCompletedMain() }} / {{ getNumberOfMain()}}
+                </div>                 
+                <div class="center">abgeschlossen</div>
+            </mat-card-content>
+        </mat-card>
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Gesamtkapitel</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div class="flex-center">
+                    {{ getNumberOfCompletedSubChapters() }} / {{ getNumberOfSubChapters()}}
+                </div>
+                
+                <div class="center">abgeschlossen</div>
+                    
+            </mat-card-content>
+        </mat-card>
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Nächste Lektion</mat-card-title>
+            </mat-card-header>
+            <mat-card-content> 
+                <div class="flex-center p-16">
+                    {{  getHeadingOfNextChapter() }}    
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+    <div class="flex-button">
+        <button mat-raised-button color="primary" routerLink="/content">Zum Content</button>
+    </div>
+    <div class="flex-button">
+        <button mat-raised-button color="primary" routerLink="/milestone">Zur Milestone Übersicht</button>
+    </div>
+    
+</div>
+
+
+
