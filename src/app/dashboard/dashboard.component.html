@@ -1,7 +1,7 @@
 <app-header></app-header>
 
 <div class="padding">
-    <h1> Hallo, Niklas. Hier ist deine Übersicht: </h1>
+    <h1> Hallo, {{ backend.user.firstName }}. Hier ist deine Übersicht: </h1>
     <div class="flex">
         <mat-card>
             <mat-card-header>
@@ -43,7 +43,7 @@
                 <mat-card-title>Nächste Lektion</mat-card-title>
             </mat-card-header>
             <mat-card-content> 
-                <div class="flex-center p-16">
+                <div class="flex-center p-16 font-size">
                     {{  getHeadingOfNextChapter() }}    
                 </div>
             </mat-card-content>

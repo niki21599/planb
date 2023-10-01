@@ -3,13 +3,14 @@ import { Router } from '@angular/router';
 import { inject } from '@angular/core';
 import { AuthServiceService } from './auth-service.service';
 import { FirebaseService } from './firebase.service';
+import { BackendService } from './service/backend.service';
 
 export const authGuard: CanActivateFn = (route, state) => {
-  const firebaseService: FirebaseService = inject(FirebaseService);
+  const backendService: BackendService = inject(BackendService);
   const router: Router = inject(Router);
 
 
-  if(firebaseService.isAuthenticated)
+  if(backendService.user)
     return true;
   router.navigate(["/login"]);
 

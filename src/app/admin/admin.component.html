@@ -1,5 +1,5 @@
 <app-header></app-header>
-<h2 class="margin-16">Hallo Niklas, hier ist deine Übersicht über die Fortschritte der Azubis</h2>
+<h2 class="margin-16">Hallo {{backend.user.firstName}}, hier ist deine Übersicht über die Fortschritte der Azubis</h2>
 <div class="example-container mat-elevation-z8">
     <mat-table #table [dataSource]="elements">
         <ng-container matColumnDef="name">

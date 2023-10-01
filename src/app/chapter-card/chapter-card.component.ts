@@ -1,20 +1,28 @@
-import { Component, Input} from '@angular/core';
+import { Component, Input, OnInit} from '@angular/core';
 import { SubChapter } from '../models/supChapter';
 import { FirebaseService } from '../firebase.service';
+import { BackendService } from '../service/backend.service';
 
 @Component({
   selector: 'app-chapter-card',
   templateUrl: './chapter-card.component.html',
   styleUrls: ['./chapter-card.component.css']
 })
-export class ChapterCardComponent {
-  @Input() chapterCard: SubChapter = new SubChapter("", "");
+export class ChapterCardComponent implements OnInit {
+  @Input() chapterCard: SubChapter;
 
-  constructor(public firebaseService: FirebaseService){
+  constructor(public firebaseService: FirebaseService, private backend: BackendService){
   }
 
+  ngOnInit(): void {
+    console.log(this.chapterCard)
+  }
+  
+
   toggleComplete(){
+    this.chapterCard.isComplete = !this.chapterCard.isComplete;
+    this.backend.toggleSubChapter(this.chapterCard);
     //this.chapterCard.isComplete = !this.chapterCard.isComplete;
-    this.firebaseService.updateSubchapter(this.chapterCard.id, !this.chapterCard.isComplete, this.chapterCard.idOfMilestone);
+  //  this.firebaseService.updateSubchapter(this.chapterCard.id, !this.chapterCard.isComplete, this.chapterCard.idOfMilestone);
   }
 }

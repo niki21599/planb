@@ -6,3 +6,8 @@
 mat-card{
     margin-bottom: 8px;
 }
+
+.flex{
+    display: flex !important;
+    justify-content: space-between !important;
+}

@@ -1,7 +1,7 @@
-<mat-card [class.isComplete]="chapterCard.isComplete" class="margin">
-    <mat-card-header>
+ <mat-card [class.isComplete]="chapterCard.isComplete" class="margin">
+    <mat-card-header class="space-between">
         <mat-card-title> {{ chapterCard.subHeading }}</mat-card-title>
-        
+        <mat-icon *ngIf="chapterCard.isComplete">check_circle</mat-icon>
     </mat-card-header>
     
     <mat-card-content>{{ chapterCard.text }}</mat-card-content>
@@ -11,4 +11,4 @@
         <button mat-button *ngIf="!chapterCard.isComplete" (click)="toggleComplete()"> Kapitel abschließen </button>
         <button mat-button *ngIf="chapterCard.isComplete" (click)="toggleComplete()" color="white"> Kapitelabschluss rückgängig machen </button>
       </mat-card-actions>
-</mat-card>
+</mat-card> 

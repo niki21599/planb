@@ -1,27 +1,15 @@
 import { SubChapter } from "./supChapter";
 
 export class Chapter{
-    id: string;
-    title: string 
-    subChapters: SubChapter[];
+    id: number;
+    title: string;  
+    userId: number;
 
-    constructor(title: string, subChapters: SubChapter[]){
+    constructor(title: string, id: number, userId: number){
         this.title = title;
-        this.subChapters = subChapters;
+        this.id = id;
+        this.userId = userId;
     }
 
-    isComplete(): boolean{
-        return this.subChapters.length == this.getNumberOfCompleted();
-    }
-
-    getNumberOfCompleted(): number{
-        let count =  0;
-
-        for (const subChapter of this.subChapters) {
-        if (subChapter.isComplete) {
-            count++;
-        }
-        }
-        return count;
-    }
+    
 }

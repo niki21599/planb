@@ -1,6 +1,12 @@
 export class User{
-    firstname: string; 
-    lastname: string;
+    firstName: string; 
+    lastName: string;
     role: string; 
-    userId: string;
+    id: number;
+    email: string; 
+    password: string;
+
+    constructor(id: number, firstName: string, lastName: string, role: string, email: string, password: string){
+        
+    }
 }

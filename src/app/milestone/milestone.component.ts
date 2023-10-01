@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ChapterServiceService } from '../service/chapter-service.service';
 import { FirebaseService } from '../firebase.service';
+import { BackendService } from '../service/backend.service';
 
 @Component({
   selector: 'app-milestone',
@@ -9,8 +10,9 @@ import { FirebaseService } from '../firebase.service';
 })
 export class MilestoneComponent {
 
+  placeholder = []
 
-constructor(public chapterService: ChapterServiceService, public firebaseService: FirebaseService){
+constructor( public firebaseService: FirebaseService, public backend: BackendService){
 }
 
 

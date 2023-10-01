@@ -7,7 +7,7 @@ import { SubChapter } from '../models/supChapter';
 })
 export class ChapterServiceService {
 
-  subChapters: SubChapter[] = [ new SubChapter("Test 1 ", " test Content"), new SubChapter("Test 1 ", " test Content"), new SubChapter("Test 1 ", " test Content")]; 
+ /*  subChapters: SubChapter[] = [ new SubChapter("Test 1 ", " test Content"), new SubChapter("Test 1 ", " test Content"), new SubChapter("Test 1 ", " test Content")]; 
   subChapters1: SubChapter[] = [new SubChapter("Test 1 ", " test Content"), new SubChapter("Test 1 ", " test Content")]; 
   subChapters2: SubChapter[] = [new SubChapter("Test 1 ", " test Content"), new SubChapter("Test 1 ", " test Content"), new SubChapter("Test 1 ", " test Content"), new SubChapter("Test 1 ", " test Content"), new SubChapter("Test 1 ", " test Content"), new SubChapter("Test 1 ", " test Content")]; 
   subChapters3: SubChapter[] = [new SubChapter("Test 1 ", " test Content"), new SubChapter("Test 1 ", " test Content"), new SubChapter("Test 1 ", " test Content"), new SubChapter("Test 1 ", " test Content"), new SubChapter("Test 1 ", " test Content"), new SubChapter("Test 1 ", " test Content"), new SubChapter("Test 1 ", " test Content"), new SubChapter("Test 1 ", " test Content"), new SubChapter("Test 1 ", " test Content")]; 
@@ -88,5 +88,5 @@ export class ChapterServiceService {
     return undefined
   }
 
-  constructor() { }
+  constructor() { } */
 }

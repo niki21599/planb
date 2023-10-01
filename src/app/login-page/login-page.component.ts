@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthServiceService } from '../auth-service.service';
 import { Router } from '@angular/router';
 import { FirebaseService } from '../firebase.service';
+import { BackendService } from '../service/backend.service';
 
 @Component({
   selector: 'app-login-page',
@@ -16,20 +17,20 @@ export class LoginPageComponent implements OnInit {
   isAuthenticated: boolean = false;
 
 
-  constructor(private firebase: FirebaseService, private router: Router){
+  constructor(private backend: BackendService, private router: Router){
 
   }
 
   ngOnInit(): void {
-    
+    this.backend.getAllUsers();
   }
 
  async onSubmit(){
-    this.firebase.login(this.username, this.password).then((res: any)=> {
+    let loginSuccesful = this.backend.login(this.username, this.password); 
+    if(loginSuccesful){
       this.router.navigateByUrl("");
-      console.log("moin");
-    }).catch(err => {
+    }else{
       this.loginValid = false;
-    }) 
+    }
   }
 }

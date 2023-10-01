@@ -38,7 +38,7 @@ export class FirebaseService {
     })
 
     //let ref = collection(doc(collection(this.firestore, "milestones"), "ce8cH57TgGcMdE5KjOvc"), "subChapter");
-   this.unsub = onSnapshot(this.getMilestonesRef(), list => {
+   /* this.unsub = onSnapshot(this.getMilestonesRef(), list => {
       this.milestones = [];
       list.forEach(el => {
         let milestone = this.setMilestone(el);
@@ -55,7 +55,7 @@ export class FirebaseService {
 
       })
       
-   })
+   }) */
     //this.items.unsubscribe();
   }
 
@@ -81,11 +81,11 @@ export class FirebaseService {
   }
 
   setUser(user, uid){
-    this.user = new User();
+   /*  this.user = new User();
     this.user.firstname = user.firstname;
     this.user.lastname = user.lastname;
     this.user.role = user.role;
-    this.user.userId = uid;
+    this.user.userId = uid; */
   }
 
 
@@ -100,20 +100,20 @@ export class FirebaseService {
   }
 
   setMilestone(el){
-    let title = el.data().heading;
+    /* let title = el.data().heading;
     let milestone = new Chapter(title, []);
     milestone.id = el.id;
-    return milestone;
+    return milestone; */
   }
 
   setSubchapter(el, elOfParent){
-    let heading = el.data().heading;
+    /* let heading = el.data().heading;
     let text = el.data().text;
     let isCompleted = el.data().isCompleted;
     let subChapter = new SubChapter(heading, text, isCompleted);
     subChapter.id = el.id;
     subChapter.idOfMilestone = elOfParent.id;
-    return subChapter
+    return subChapter */
   }
 
 
@@ -137,67 +137,67 @@ export class FirebaseService {
 
   getNumberOfCompletedMainChapters(): number{
     let count = 0;
-
+/* 
     for (const chapter of this.milestones) {
       if(chapter.isComplete()){
         count++;
       }
-    }
+    } */
 
     return count;
   }
 
   getNumberOfChapters(): number{
     let count = 0;
-    for (const chapter of this.milestones) {
+   /*  for (const chapter of this.milestones) {
       count += chapter.subChapters.length
-    }
+    } */
     return count
   }
 
   getNumberOfCompletedChapters(): number{
     let count = 0;
-
+/*
     for (const chapter of this.milestones) {
       for (const subChapter of chapter.subChapters) {
         if(subChapter.isComplete){
           count++;
         }
       }
-    }
+    } */
 
     return count;
   }
 
   getCurrentChapter(): SubChapter | undefined{
-    for (const chapter of this.milestones) {
+    /* for (const chapter of this.milestones) {
       for (const subChapter of chapter.subChapters) {
         if(!subChapter.isComplete){
          return subChapter;
         }
       }
-    }
+    } */
     return undefined;
   }
 
   getNextChapter(): SubChapter | undefined{
-    for (const chapter of this.milestones) {
+    /* for (const chapter of this.milestones) {
       for (const subChapter of chapter.subChapters) {
         if(!subChapter.isComplete){
          return subChapter;
         }
       }
     
-    }
+    } */
     return undefined;
   }
 
   getCurrentMainChapter(): Chapter | undefined{
-    for (const chapter of this.milestones) {
+    /* for (const chapter of this.milestones) {
       if(!chapter.isComplete()){
         return chapter;
       }
-    }
+    } */
     return undefined
   }
 

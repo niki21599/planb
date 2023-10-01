@@ -16,6 +16,7 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { RegisterPageComponent } from './register-page/register-page.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 import { FormsModule } from '@angular/forms';
@@ -89,6 +90,7 @@ let app = AngularFireModule.initializeApp(environment.firebase);
   MatSlideToggleModule,
   MatSelectModule,
   MatOptionModule,
+  HttpClientModule, 
   FlexLayoutModule, 
   AngularFireModule.initializeApp(environment.firebase), 
   AngularFireAuthModule, 

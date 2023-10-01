@@ -1,10 +1,11 @@
 <app-header></app-header>
 <div>
-    <div *ngFor="let milestone of firebaseService.milestones">
+    <div *ngFor="let milestone of backend.chapters">
         <h2>{{ milestone.title }}</h2>
-        <div *ngFor="let subChapter of milestone.subChapters">
-            <mat-card [class.isComplete]="subChapter.isComplete">
-                <mat-card-content>{{ subChapter.subHeading }}</mat-card-content>
+        <div  *ngFor="let subChapter of backend.getSubChaptersFromChapter(milestone.id)" >
+            <mat-card [class.isComplete]="subChapter.isComplete" >
+                <mat-card-content class="flex"><div>{{ subChapter.subHeading }}</div> <mat-icon *ngIf="subChapter.isComplete">check_circle</mat-icon></mat-card-content>
+                
             </mat-card>
         </div>
     </div>

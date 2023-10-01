@@ -10,13 +10,13 @@ import { AdminComponent } from './admin/admin.component';
 import { MilestoneComponent } from './milestone/milestone.component';
 
 const routes: Routes = [
-  {path:"", component: DashboardComponent }, 
-  {path: "content", component: MainPageComponent}, 
+  {path:"", component: DashboardComponent, canActivate: [authGuard] }, 
+  {path: "content", component: MainPageComponent, canActivate: [authGuard] }, 
   {path: "login", component: LoginPageComponent}, 
   {path: "register", component: RegisterPageComponent}, 
-  {path: "settings", component: SettingsPageComponent}, 
-  {path: "admin", component: AdminComponent}, 
-  {path: "milestone", component: MilestoneComponent}
+  {path: "settings", component: SettingsPageComponent, canActivate: [authGuard]}, 
+  {path: "admin", component: AdminComponent, canActivate: [authGuard]}, 
+  {path: "milestone", component: MilestoneComponent, canActivate: [authGuard]}
 ];
 
 @NgModule({

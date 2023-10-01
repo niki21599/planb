@@ -1,21 +1,24 @@
 <p>
     <mat-toolbar color="primary">
-    <span class="pointer" routerLink="/">Plan B</span>
+    <span class="pointer" routerLink="/"> 
+
+      <img src="assets/plan-b-logo.png" alt="" class="img-logo">
+    </span>
     <span class="example-spacer"></span>
 
-    <button routerLink="/admin" *ngIf="isAuthenticated"  mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <button routerLink="/admin" *ngIf="backend.user && backend.user.role == 'betreuer' "  mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
       <mat-icon>view_list</mat-icon>
     </button>
-    <button routerLink="/" *ngIf="isAuthenticated"  mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <button routerLink="/" *ngIf="backend.user"  mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
       <mat-icon>home</mat-icon>
     </button>
-    <button routerLink="/settings" *ngIf="isAuthenticated"  mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <button routerLink="/settings" *ngIf="backend.user"  mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
       <mat-icon>settings</mat-icon>
     </button>
-    <a href="assets/meilensteine.pdf"><button *ngIf="isAuthenticated" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <a href="assets/meilensteine.pdf"><button *ngIf="backend.user" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
       <mat-icon>download</mat-icon>
     </button></a>
-    <button routerLink="/login" *ngIf="isAuthenticated" mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+    <button (click)="logout()" *ngIf="backend.user" mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
      <mat-icon>logout</mat-icon>
    </button>
    
