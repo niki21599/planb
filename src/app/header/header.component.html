@@ -2,7 +2,7 @@
     <mat-toolbar color="primary">
     <span class="pointer" routerLink="/"> 
 
-      <img src="assets/plan-b-logo.png" alt="" class="img-logo">
+      <img src="assets/plan-b-logo-white.png" alt="" class="img-logo">
     </span>
     <span class="example-spacer"></span>
 
@@ -15,7 +15,7 @@
     <button routerLink="/settings" *ngIf="backend.user"  mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
       <mat-icon>settings</mat-icon>
     </button>
-    <a href="assets/meilensteine.pdf"><button *ngIf="backend.user" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <a href="assets/milestones.pdf"><button *ngIf="backend.user" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
       <mat-icon>download</mat-icon>
     </button></a>
     <button (click)="logout()" *ngIf="backend.user" mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
