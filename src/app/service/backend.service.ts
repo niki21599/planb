@@ -92,7 +92,7 @@ export class BackendService {
 
   login(email: string, password: String): boolean{
     for (const user of this.allUsers) {
-      if(user.email == email && user.password == password){
+      if(user.email.toLowerCase() == email.toLowerCase() && user.password == password){
         this.user = user;
         return true;
       }  
